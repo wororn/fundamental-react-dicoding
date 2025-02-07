@@ -1,0 +1,61 @@
+:root {
+  --color-primary: #323232;
+  --color-white: #c7c4c4;
+  --color-grey: #a9a9b3;
+  --color-grey-light: #9aa0a6;
+  --color-green: #00bcd4;
+  --color-danger: #f44336;
+  --bg-dark: #252627;
+  --bg-dark-secondary: #292a2d;
+  --color-pink: #de25f7;
+  --color-orange: #fc1111;
+  --color-black: #252627;
+  --text-color: hsla(24, 93%, 56%, 0.877);
+}
+
+:root.light {
+  --color-black: var(--bg-dark);
+  --background: #dddddd;
+  --suface: #ffffff;
+  --on-background: #ffffff;
+  --on-background-grey: #6d6d6d;
+  --on-surface: #ffffff;
+  --text-color: hsla(24, 93%, 56%, 0.877);
+  --bg-white: var(--color-white);
+}
+
+:root.dark {
+  --color-primary: #323232;
+  --bg-dark: #252627;
+  background-color: var(--bg-dark);
+  color: white;
+  --text-color: hsla(24, 93%, 56%, 0.877);
+  --color-white: var(--color-white);
+}
+
+[data-theme="light"] {
+  --color-black: var(--bg-dark);
+  --background: #dddddd;
+  --on-background: #ffffff;
+  --on-background-grey: #6d6d6d;
+  --text-color: hsla(24, 93%, 56%, 0.877);
+  --font-color: hsla(24, 93%, 56%, 0.877);
+  --bg-white: var(--color-white);
+  color: var(--bg-dark);
+}
+
+[data-theme="dark"] {
+  --color-primary: #323232;
+  --bg-dark: #252627;
+  background-color: var(--bg-dark);
+  color: white;
+  --text-color: hsla(24, 93%, 56%, 0.877);
+  --font-color: hsla(24, 93%, 56%, 0.877);
+  --color-white: var(--color-white);
+}
+
+@import "design.css";
+@import "utility.css";
+@import "component.css";
+@import "responsive.css";
+@import "App.css";

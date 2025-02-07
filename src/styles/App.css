@@ -1,0 +1,27 @@
+.app {
+  transition: background-color 0.3s ease;
+}
+
+.app.light {
+  background-color: white;
+  color: var(--bg-dark);
+  --text-color: var(--text-color);
+}
+
+.app.dark {
+  --color-primary: #323232;
+  --bg-dark: #252627;
+  background-color: var(--bg-dark);
+  color: white;
+  --text-color: var(--text-color);
+}
+
+.app-header {
+  margin: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}

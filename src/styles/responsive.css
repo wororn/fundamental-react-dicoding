@@ -1,0 +1,29 @@
+@media screen and (min-width: 680px) {
+    .body-app {
+      max-width: 90%;
+      grid-template-columns: 0.5fr 1fr;
+    }
+  }
+  
+  @media screen and (min-width: 800px) {
+    .body-app {
+      max-width: 90%;
+    }
+  
+    .memo-list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media screen and (min-width: 900px) {
+    .memo-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media screen and (min-width: 1200px) {
+    .body-app {
+      max-width: 1140px;
+    }
+  }
+  
