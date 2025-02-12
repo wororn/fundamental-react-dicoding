@@ -6,9 +6,9 @@ import { FcEmptyTrash } from "react-icons/fc";
 export default function DetailAction({
   id,
   archived,
-  onDelete,
+  onUnarchive,
   onArchive,
-  onUnarchive
+  onDelete
 }) {
   const handleArchiveToggle = () => {
     archived ? onUnarchive(id) : onArchive(id);
@@ -17,18 +17,32 @@ export default function DetailAction({
   return (
     <div className="page__detail">
       <div style={{ display: "inline-grid", width: "10%", padding: "10px" }}>
-        <span className="detail__label">
-          {archived ? "Pindahkan" : "Arsipkan"}
-        </span>
-        <button
-          className="action"
-          type="button"
-          title={archived ? "Pindahkan" : "Arsipkan"}
-          onClick={handleArchiveToggle}
+        <div
+          className="toggle-button"
+          style={{
+            color: archived ? "#f77a26e0" : "#fc1111",
+            width: "50%",
+            padding: "10px",
+            textAlign: "center",
+            justifyContent: "center",
+            justifyItems: "center"
+          }}
         >
-          {archived ? <FcUp /> : <FcDown />}
-        </button>
+          <span className="detail__label">
+            {archived ? "Pindahkan" : "Arsipkan"}
+          </span>
+          <button
+            style={{ width: "90px" }}
+            className="action"
+            type="button"
+            title={archived ? "Pindahkan" : "Arsipkan"}
+            onClick={handleArchiveToggle}
+          >
+            {archived ? <FcUp /> : <FcDown />}
+          </button>
+        </div>
       </div>
+
       <div style={{ display: "inline-grid", width: "10%", padding: "10px" }}>
         <span className="detail__label">Hapus</span>
         <button

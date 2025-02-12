@@ -146,6 +146,7 @@ async function unarchiveNote(id) {
   return { error: false, data: responseJson.data };
 }
 
+
 async function deleteNote(id) {
   const response = await fetchWithToken(`${BASE_URL}/notes/${id}`, {
     method: "DELETE"

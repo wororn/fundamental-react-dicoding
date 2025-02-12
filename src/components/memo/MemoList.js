@@ -9,7 +9,9 @@ export default function MemoList({ notes }) {
         <p
           className="memo-list__empty__app"
           style={{
-            color: " hsla(24, 93%, 56%, 0.877)"
+            color: " hsla(24, 93%, 56%, 0.877)",
+            fontSize: "20px",
+            alignContent: "center"
           }}
         >
           Tidak Ada Catatan...

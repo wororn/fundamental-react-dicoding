@@ -9,12 +9,18 @@ body {
   background-color: var(--bg-dark);
   color: var(--color-white);
   --font-color: hsla(24, 93%, 56%, 0.877);
+  --text-color: var(--text-color);
 }
 
 body.light {
+  --on-surface: #ffffff;
+  --suface: #ffffff;
+  --on-background: #ffffff;
   background-color: white;
+  --bg-white: white;
   color: var(--bg-dark);
   --font-color: hsla(24, 86%, 50%, 0.877);
+  --color-black: var(--bg-dark);
 }
 
 body.dark {

@@ -7,7 +7,12 @@ function Footer() {
       <footer className="app__footer" style={{ textAlign: "center" }}>
         <div className="app__footer" style={{ width: "100%" }}>
           Made by &nbsp;
-          <a href="https://woro.webs.com" target="_blank" rel="noreferrer">
+          <a
+            href="https://woro.webs.com"
+            target="_blank"
+            rel="noreferrer"
+            style={{ textDecoration: "none", color: "#f77a26e0" }}
+          >
             Woro Retnoningsih
           </a>
           &nbsp; © {new Date().getFullYear()}

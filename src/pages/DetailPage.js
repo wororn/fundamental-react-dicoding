@@ -24,39 +24,66 @@ class DetailPage extends Component {
       initializing: true
     };
 
-    this.onArchiveActionHandler = this.onArchiveActionHandler.bind(this);
     this.onUnarchiveActionHandler = this.onUnarchieveActionHandler.bind(this);
+    this.onArchiveActionHandler = this.onArchiveActionHandler.bind(this);
     this.onDeleteActionHandler = this.onDeleteActionHandler.bind(this);
   }
 
   async componentDidMount() {
     const notes = await getNote(this.props.id);
-    this.setState(() => {
-      return {
-        notes: notes.data,
-        initializing: false
-      };
+
+    this.setState({
+      notes: notes.data,
+      initializing: false
     });
     console.log("data-awal", notes);
   }
 
+  onUnarchieveActionHandler = async (id) => {
+    if (this.state.notes.archived === true) {
+      try {
+        await unarchiveNote(id);
+        //update state after successfully unarchive note.
+        this.setState((prevState) => ({
+          notes: {
+            ...prevState.notes,
+            archived: false
+          }
+        }));
+        this.props.navigate("/"); // Navigate after the state is updated, if it's ok.
+        console.log(`Catatan ${id} berhasil dipindahkan dari arsip.`);
+      } catch (error) {
+        console.error("Error Unarchiving Notes", error);
+      }
+    } else {
+      console.log(`Catatan ${id} bukan arsip`);
+    }
+  };
+
+  onArchiveActionHandler = async (id) => {
+    if (this.state.notes.archived === false) {
+      try {
+        await archiveNote(id);
+        //update state after successfully archive note.
+        this.setState((prevState) => ({
+          notes: {
+            ...prevState.notes,
+            archived: true
+          }
+        }));
+        this.props.navigate("/archieves"); // Navigate after the state is updated, if it's ok.
+        console.log(`Catatan ${id} berhasil dipindahkan ke arsip.`);
+      } catch (error) {
+        console.error("Error archiving Notes", error);
+      }
+    } else {
+      console.log(`Catatan ${id} adalah arsip`);
+    }
+  };
+
   async onDeleteActionHandler(id) {
     await deleteNote(id);
     this.props.navigate("/");
-  }
-
-  async onUnarchieveActionHandler(id) {
-    if (this.state.notes.unarchiveNote) {
-      await unarchiveNote(id);
-      this.props.navigate("/archieves");
-    }
-  }
-
-  async onArchiveActionHandler(id) {
-    if (this.state.notes.archiveNote) {
-      await archiveNote(id);
-      this.props.navigate("/");
-    }
   }
 
   render() {
@@ -65,18 +92,26 @@ class DetailPage extends Component {
     }
 
     if (this.state.notes === "") {
-      return <p>Catatan Tidak Ditemukan</p>;
+      return (
+        <p
+          style={{
+            fontSize: "14px",
+            color: " rgb(248, 108, 14)"
+          }}
+        >
+          Catatan Tidak Ditemukan
+        </p>
+      );
     }
 
     if (this.state.notes) {
-      console.log("data-akhir", this.state.notes); // Add this line to log notes
+      console.log(this.state.notes); // Add this line to log notes
       return (
         <>
           <MemoDetail
             onDelete={this.onDeleteActionHandler}
-            onArchive={this.onArchiveActionHandler}
             onUnarchive={this.onUnarchieveActionHandler}
-            /* {...notes} */
+            onArchive={this.onArchiveActionHandler}
             notes={this.state.notes}
           />
         </>

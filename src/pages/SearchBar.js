@@ -9,7 +9,7 @@ export default function SearchBar({ keyword, keywordChange }) {
         placeholder="Cari Berdasarkan Judul.............."
         value={keyword}
         onChange={(e) => keywordChange(e.target.value)}
-        style={{ width: "98%" }}
+        style={{ width: "98%", justifyItems: "center", marginLeft: "10px" }}
       />
     </section>
   );

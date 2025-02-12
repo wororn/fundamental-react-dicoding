@@ -98,6 +98,7 @@ search-bar {
   margin-bottom: 12px;
   text-transform: uppercase;
   color: var(--color-grey-light);
+  text-decoration: none;
 }
 
 .memo-list {
@@ -117,12 +118,19 @@ search-bar {
   color: var(--color-white);
 }
 
-.memo-item {
-  border: 2px solid var(--color-white);
+.memo-item__app,
+.search-bar,
+.memo-form__submit {
+  border: 2px solid grey;
   border-radius: 4px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+}
+.search-bar {
+  width: 95%;
+  margin: 0px 10px 20px 30px;
+  justify-items: center;
 }
 
 .memo-item__body,
@@ -183,10 +191,6 @@ search-bar {
 .memo-item__desc {
   font-size: 14px;
   margin-bottom: 4px;
-}
-
-.memo-item__desc:hover {
-  color: var(--color-pink);
 }
 
 .memo-form__body:hover {
@@ -292,7 +296,8 @@ header .navigation ul li {
   gap: 16px;
 }
 
-.header_h2 {
+.header_h2,
+.spacing {
   width: auto;
   display: flex;
   justify-content: center;

@@ -4,6 +4,7 @@ import { FiLogOut } from "react-icons/fi";
 import { LocaleConsumer } from "../../context/LocaleContext";
 import { FcHome, FcDocument, FcPlus } from "react-icons/fc";
 import { ThemeProvider } from "../../context/ThemeContext";
+import PropTypes from "prop-types";
 
 export default function Navigation({ name, logout }) {
   return (
@@ -43,7 +44,7 @@ export default function Navigation({ name, logout }) {
                 <div className="navigation-menu">
                   <ul className="navigation-list">
                     <li>
-                      <Link style={{ textDecoration: "none" }} to="/archives">
+                      <Link style={{ textDecoration: "none" }} to="/archieves">
                         <span
                           className={
                             locale === "id" ? "app_title-id" : "app_title-en"
@@ -53,7 +54,7 @@ export default function Navigation({ name, logout }) {
                             color: " hsla(24, 93%, 56%, 0.877)"
                           }}
                         >
-                          {locale === "id" ? "Arsip" : "Archieves"}
+                          {locale === "id" ? "Arsip" : "Archives"}
                         </span>
                         &nbsp;
                         <FcDocument />
@@ -96,3 +97,8 @@ export default function Navigation({ name, logout }) {
     </ThemeProvider>
   );
 }
+
+Navigation.propTypes = {
+  name: PropTypes.string.isRequired,
+  logout: PropTypes.func.isRequired
+};

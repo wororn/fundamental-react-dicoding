@@ -11,8 +11,8 @@ const AddMemo = () => {
     navigate("/");
   };
   return (
-    <section className="memo-list-input__app">
-      <article className="memo-list-article__app">
+    <section className="memo-list-input">
+      <article className="memo-list-article">
         <MemoForm addMemo={handleAddNote} />
       </article>
     </section>

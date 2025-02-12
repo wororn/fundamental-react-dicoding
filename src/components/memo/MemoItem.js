@@ -5,11 +5,19 @@ import { showFormattedDate } from "../../utils/network-data";
 
 function MemoItem({ id, title, body, createdAt }) {
   return (
-    <div className="memo-item">
+    <div className="memo-item__app">
       <div className="memo-item__body">
         <div className="memo-item__title">
           <h3>
-            <Link to={`/notes/${id}`}>{title}</Link>
+            <Link
+              to={`/notes/${id}`}
+              style={{
+                textDecoration: "none",
+                color: "hsla(182, 95.60%, 55.70%, 0.88)"
+              }}
+            >
+              {title}
+            </Link>
           </h3>
         </div>
         <div className="memo-item__date">{showFormattedDate(createdAt)}</div>

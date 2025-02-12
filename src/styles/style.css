@@ -1,16 +1,16 @@
 :root {
   --color-primary: #323232;
-  --color-white: #c7c4c4;
+  --color-white: #c5c3c3;
   --color-grey: #a9a9b3;
   --color-grey-light: #9aa0a6;
   --color-green: #00bcd4;
   --color-danger: #f44336;
   --bg-dark: #252627;
-  --bg-dark-secondary: #292a2d;
+  --bg-dark-secondary: #ce910e;
   --color-pink: #de25f7;
   --color-orange: #fc1111;
   --color-black: #252627;
-  --text-color: hsla(24, 93%, 56%, 0.877);
+  --text-color: #f77a26e0;
 }
 
 :root.light {
@@ -45,13 +45,16 @@
 }
 
 [data-theme="dark"] {
-  --color-primary: #323232;
   --bg-dark: #252627;
+  --background: #dddddd;
+  --on-background: var(--bg-dark);
   background-color: var(--bg-dark);
-  color: white;
+  --on-background-grey: #6d6d6d;
+  border: var(--color-grey-light);
+  color: var(--color-grey-light);
   --text-color: hsla(24, 93%, 56%, 0.877);
   --font-color: hsla(24, 93%, 56%, 0.877);
-  --color-white: var(--color-white);
+  --color-white: #cfcccc;
 }
 
 @import "design.css";

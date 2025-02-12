@@ -151,12 +151,35 @@ class MemoApp extends Component {
               <Route path="/" element={<Home />} />
               <Route path="/notes/new" element={<Add />} />
               <Route path="/notes/:id" element={<DetailPageCapsuled />} />
-              <Route path="/archives" element={<Arsip />} />
+              <Route path="/archieves" element={<Arsip />} />
               <Route path="/*" element={<PageNotFound />}></Route>
             </Routes>
-            <button onClick={toggleTheme}>
-              Switch to {theme === "light" ? "Dark" : "Light"} Mode
-            </button>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
+            <div
+              style={{
+                display: "inline-grid",
+                width: "100%",
+                padding: "10px",
+                textAlign: "center",
+                justifyContent: "center",
+                justifyItems: "center"
+              }}
+            >
+              <button
+                onClick={toggleTheme}
+                style={{
+                  width: "100%",
+                  padding: "10px",
+                  textAlign: "center",
+                  justifyContent: "center",
+                  justifyItems: "center"
+                }}
+              >
+                Switch to {theme === "light" ? "Dark" : "Light"} Mode
+              </button>
+            </div>
           </main>
         </div>
       </LocaleContext.Provider>

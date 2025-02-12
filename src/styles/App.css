@@ -9,15 +9,21 @@
 }
 
 .app.dark {
-  --color-primary: #323232;
+  --color-primary: #6d6d6d;
   --bg-dark: #252627;
+  --background: #dddddd;
+  --on-background: var(--bg-dark);
   background-color: var(--bg-dark);
+  --on-background-grey: #6d6d6d;
   color: white;
-  --text-color: var(--text-color);
+  --text-color: hsla(24, 93%, 56%, 0.877);
+  --font-color: hsla(24, 93%, 56%, 0.877);
+  --color-white: var(--color-white);
 }
 
 .app-header {
   margin: 20px;
+  color: rgb(248, 108, 14);
 }
 
 button {
